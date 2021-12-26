@@ -55,14 +55,14 @@
 			</div>
 			<div class="bottomMenue">
 				<div>
-					<button id="two" onclick="moveUp()" class="buttonMenue">
+					<button id="two" onmousedown="upStart()" onmouseup="upStop()" class="buttonMenue">
 						<i class="arrow upb"></i>
 					</button>
 					
 				</div>
 				<div>
 					<div>
-						<button id="two" onclick="changeStyle()" class="buttonL">
+						<button id="two" onmousedown="startTimeout()" onmouseup="stopTimeout()" class="buttonL">
 							<i class="arrow leftb"></i>
 						</button>
 					</div>
@@ -72,13 +72,13 @@
 						</button>
 					</div>
 					<div>
-						<button id="two" onclick="moveRight()" class="buttonR">
+						<button id="two" onmousedown="rightStart()"  onmouseup="rightStop()" class="buttonR">
 							<i class="arrow rightb"></i>
 						</button>
 					</div>
 				</div>
 				<div>
-					<button id="two" onclick="moveDown()" class="buttonSp">
+					<button id="two" onmousedown="downStart()" onmouseup="downStop()" class="buttonSp">
 						<i class="arrow downb"></i>
 					</button>
 				</div>

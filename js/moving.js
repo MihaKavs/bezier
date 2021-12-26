@@ -1,19 +1,34 @@
 
+let timeout;
+var keepGoing = true;
+var up = true;
+var rightMove = true;
+var down = true;
 	function changeStyle(){
-        var element = document.getElementById("right");
+		var element = document.getElementById("right");
 		var right = document.getElementById("right").styleRight;
 		var numericValue = window
 		.getComputedStyle(document.getElementById('right'),null)
 		.getPropertyValue('right')
 		.match(/\d+/);
 		var num = parseInt(numericValue, 10);
-		num += 5;
+		num += 1;
 		if(num < 50){
 			element.style.right = num + "px";
 		}
 		else{}
-    }
-	
+		if(keepGoing){
+			setTimeout(changeStyle, 10);
+		}
+	}
+	function startTimeout(){
+		keepGoing = true;
+		changeStyle();
+	}
+	function stopTimeout(){
+		keepGoing = false;
+		console.log('2');
+	}
 	function moveUp(){
         var element = document.getElementById("right");
 		var bott = document.getElementById("right").styleBottom;
@@ -22,13 +37,22 @@
 		.getPropertyValue('bottom')
 		.match(/\d+/);
 		var numb = parseInt(numericValueBot, 10);
-		numb += 5;
+		numb += 1;
 		if(numb < 120){
 			element.style.bottom = numb + "px";
 		}
 		else{}
+		if(up){
+			setTimeout(moveUp, 10);
+		}
     }
-	
+	function upStart(){
+		up = true;
+		moveUp();
+	}
+	function upStop(){
+		up = false;
+	}
 		function moveDown(){
         var element = document.getElementById("right");
 		var bott = document.getElementById("right").styleBottom;
@@ -37,14 +61,23 @@
 		.getPropertyValue('bottom')
 		.match(/\d+/);
 		var numb = parseInt(numericValueBot, 10);
-		numb = numb-5;
-		if(numb > -5){
+		numb = numb-1;
+		if(numb > -1){
 			element.style.bottom = numb + "px";
 		}
 		else{}
+		if(down){
+			setTimeout(moveDown, 10);
+		}
     }
-	
-		function moveRight(){
+	function downStart(){
+		down = true;
+		moveDown();
+	}
+	function downStop(){
+		down = false;
+	}
+	function moveRight(){
         var element = document.getElementById("right");
 		var right = document.getElementById("right").styleRight;
 		var numericValue = window
@@ -52,13 +85,24 @@
 		.getPropertyValue('right')
 		.match(/\d+/);
 		var num = parseInt(numericValue, 10);
-		num += -5;
-		if(num > -5){
+		num += -1;
+		if(num > -1){
 			element.style.right = num + "px";
 		}
 		else{}
+		if(rightMove){
+			setTimeout(moveRight, 10);
+			console.log(rightMove);
+		}
     }
-	
+	function rightStart(){
+		rightMove = true;
+		moveRight();
+	}
+	function rightStop(){
+		rightMove = false;
+		console.log(rightMove);
+	}
 	function center(){
 		var element = document.getElementById("right");
 		var right = document.getElementById("right").styleRight;
@@ -83,13 +127,13 @@ function make_base()
 
 document.getElementById("myCamvas").style.display = "none";
 document.getElementById("svgCanvas").style.display = "none";
-document.getElementById("one").style.backgroundColor = "#00ffd2";
+document.getElementById("one").style.backgroundColor = "#ffffff";
 
 function showBezier(){
 	document.getElementById("viewport").style.display = "none";
 	document.getElementById("svgCanvas").style.display = "none";
 	document.getElementById("myCamvas").style.display = "block";
-	document.getElementById("three").style.backgroundColor = "#00ffd2";
+	document.getElementById("three").style.backgroundColor = "#ffffff";
 	document.getElementById("twoo").style.backgroundColor = "#34ccb1";
 	document.getElementById("one").style.backgroundColor = "#34ccb1";
 	document.getElementById("colorpicker").style.display = "block";
@@ -125,7 +169,7 @@ function showImg(){
 	document.getElementById("myCamvas").style.display = "none";
 	document.getElementById("svgCanvas").style.display = "none";
 	document.getElementById("viewport").style.display = "block";
-	document.getElementById("one").style.backgroundColor = "#00ffd2";
+	document.getElementById("one").style.backgroundColor = "#ffffff";
 	document.getElementById("three").style.backgroundColor = "#34ccb1";
 	document.getElementById("twoo").style.backgroundColor = "#34ccb1";
 	document.getElementById("colorpicker").style.display = "none";
@@ -134,33 +178,29 @@ function showSvg(){
 	document.getElementById("myCamvas").style.display = "none";
 	document.getElementById("viewport").style.display = "none";
 	document.getElementById("svgCanvas").style.display = "block";
-	document.getElementById("twoo").style.backgroundColor = "#00ffd2";
+	document.getElementById("twoo").style.backgroundColor = "#ffffff";
 	document.getElementById("three").style.backgroundColor = "#34ccb1";
 	document.getElementById("one").style.backgroundColor = "#34ccb1";
 	document.getElementById("colorpicker").style.display = "none";
 }
 document.getElementById("colorpicker").style.display = "none";
-
-document.getElementById("submitDesighn").addEventListener('click', function(){
-    var buttons = $('<div>')
+	
+function myFunction(){
 	Swal.fire({
-	icon: 'success',
-	title: 'Thank you for submitting your design.',
-	confirmButtonColor: '#34ccb1',
-	})
-    
-  });
-
-
-
+		icon: 'success',
+		title: 'Thank you for submitting your design.',
+		confirmButtonColor: '#34ccb1',
+	})  
+}
 
 function createButton(text, cb) {
   return $('<button>' + text + '</button>').on('click', cb);
 }
-
+console.log()
 function submitButton(){
 	center();
 	showImg();
+	document.getElementById("submitDesighn").addEventListener('click', myFunction())
 }
 
 function imgInfo(){
