@@ -192,8 +192,7 @@ function svgInfo(){
 	});
 }
 function bezierInfo(){
-	$(document).ready(function() {
-	  $("#infoBezier").on("click", function(e) {
+	document.getElementById("infoBezier").addEventListener('click', function(){
 		Swal.fire({
 		icon: 'info',
 		title: 'This is the Bezier curve vresion of Nike logo.',
@@ -204,6 +203,6 @@ function bezierInfo(){
 		})
 		
 	  });
-	});
-}
+	};
+	
 
