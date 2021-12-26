@@ -141,8 +141,7 @@ function showSvg(){
 }
 document.getElementById("colorpicker").style.display = "none";
 
-$(document).ready(function() {
-  $("#submitDesighn").on("click", function(e) {
+document.getElementById("submitDesighn").addEventListener('click', function(){
     var buttons = $('<div>')
 	Swal.fire({
 	icon: 'success',
@@ -151,7 +150,7 @@ $(document).ready(function() {
 	})
     
   });
-});
+
 
 
 
@@ -165,8 +164,7 @@ function submitButton(){
 }
 
 function imgInfo(){
-	$(document).ready(function() {
-	  $("#infoIMG").on("click", function(e) {
+	document.getElementById("infoIMG").addEventListener('click', function(){
 		Swal.fire({
 		icon: 'info',
 		title: 'This is the original vresion of Nike logo.',
@@ -174,11 +172,10 @@ function imgInfo(){
 		})
 		
 	  });
-	});
-}
+	};
+
 function svgInfo(){
-	$(document).ready(function() {
-	  $("#infoSVG").on("click", function(e) {
+	document.getElementById("infoSVG").addEventListener('click', function(){
 		Swal.fire({
 		icon: 'info',
 		title: 'This is the SVG vresion of Nike logo.',
@@ -189,8 +186,7 @@ function svgInfo(){
 		})
 		
 	  });
-	});
-}
+	};
 function bezierInfo(){
 	document.getElementById("infoBezier").addEventListener('click', function(){
 		Swal.fire({
