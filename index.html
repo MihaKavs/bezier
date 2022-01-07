@@ -23,7 +23,7 @@
 			<div class="menue">
 				<div>
 					<button  id="one" onclick="showImg()" class="buttons">
-						<div class="info positionImg" onclick="imgInfo()" style="cursor: pointer;" id="infoIMG">
+						<div class="info positionImg" onmousedown="imgInfo()" style="cursor: pointer;" id="infoIMG">
 							i
 						</div>
 						<div class="orig">
@@ -33,23 +33,25 @@
 				</div>
 				<div >
 					<button id="twoo" onclick="showSvg()" class="buttons">
-						<div class="info positionSvg" onclick="svgInfo()" style="cursor: pointer;" id="infoSVG">
+						<div class="info positionSvg" onmousedown="svgInfo()" style="cursor: pointer;" id="infoSVG">
 							i
 						</div>
 						<div class="orig">
 						<label class="textSize">&nbsp SVG</label>
 						</div>
 					</button>
+
 				</div>
 				<div >
 					<button id="three" onclick="showBezier()" class="buttons">
-						<div class="info positionBezier" onclick="bezierInfo()" style="cursor: pointer;" id="infoBezier">
+						<div class="info positionBezier" onmousedown="bezierInfo()" style="cursor: pointer;" id="infoBezier">
 							i
 						</div>
 						<div class="orig">
 						<label class="textSize">Bezier</label>
 						</div>
 					</button>
+
 					<input type="color" class="colorPicker" id="colorpicker" value="#000000">
 				</div>
 			</div>

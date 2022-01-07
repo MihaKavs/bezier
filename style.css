@@ -70,6 +70,7 @@
 	border: 0.2em solid black;
 	display: flex;
 	box-shadow: 2px 2px 2px black;
+	z-index: -1;
 }
 .buttons:checked{
 	background-color:	#ffffff;
@@ -190,8 +191,6 @@ canvas {
 	position: relative;
 	right: 25px;
 	bottom: 25px;
-	margin-top: 6em;
-	margin-left: 19em;
 }
 .svg{
 	padding-top: 5.8em;
@@ -216,6 +215,7 @@ canvas {
 	opacity: 0.8;
 	padding-right: 0.07em;
     padding-bottom: 0.09em;
+	z-index: 2;
 }
 .orig{
 	position: relative;

@@ -146,6 +146,7 @@ function showBezier(){
 	ctx.lineTo(150,60);
 	ctx.fill();
 	ctx.stroke();
+
 }   //125, 300, 382, 206, 551, 70
 var bezierColor = '#000000';
 	let colorInput = document.getElementById('colorpicker');
@@ -173,6 +174,7 @@ function showImg(){
 	document.getElementById("three").style.backgroundColor = "#34ccb1";
 	document.getElementById("twoo").style.backgroundColor = "#34ccb1";
 	document.getElementById("colorpicker").style.display = "none";
+	console.log("2");
 }
 function showSvg(){
 	document.getElementById("myCamvas").style.display = "none";
@@ -210,7 +212,7 @@ function imgInfo(){
 		title: 'This is the original vresion of Nike logo.',
 		confirmButtonColor: '#34ccb1',
 		})
-		
+		console.log("1");
 	  });
 	};
 
